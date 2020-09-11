@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Self Declaration Form</title>
+  <title> <%= htno %> Self Declaration Form</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -17,34 +17,12 @@
     <%- include('header'); -%>
 
     <div class="container py-3">
-      <span class="text-danger my-2 d-block font-weight-bold"> * - Marked are mandatory</span>
-      <form action="<%=method%>" method="POST">
-        <div class="form-group">
-          <label for="sname">
-            Candidate Name
-          </label>
-          <input type="text" name="sname" id="sname" class="form-control" required value="<%= name %> ">
-        </div>
-
-        <div class="form-group">
-          <label for="shtno">
-            Hall Ticket
-          </label>
-          <input type="text" name="shtno" id="shtno" class="form-control" required maxlength="10" minlength="10"
-            value="<%= htno %>">
-        </div>
-
-        <div class="form-group">
-          <label for="s_date">
-            Examniation Date
-          </label>
-          <input type="text" name="s_date" id="s_date" class="form-control" required value="<%= htno %>"
-            pattern="\d{2}-\d{2}-\d{4}" value="<%=date%>" required placeholder="dd-mm-yyyy">
-        </div>
-        <div class="form-group">
-          <input type="submit" value="<%=submitText%>" class="btn btn-block btn-danger">
-        </div>
-      </form>
+      <object data="Self-DeclarationForm.pdf" width="100%" height="100%" type="application/pdf">
+        <iframe src="Self-DeclarationForm.pdf" width="100%" height="100%"></iframe>
+      </object>
+      <div class="down-buttons text-center">
+        <a href="Self-DeclarationForm.pdf" class="btn btn-danger p-1 m-3" download>Download</a>
+      </div>
     </div>
     <%- include('footer'); -%>
   </div>

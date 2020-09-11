@@ -1,5 +1,8 @@
 body {
-  background: rgba(225, 225, 225, 0.9);
+  background-image: linear-gradient(65deg, rgba(0, 0, 0, 0.1) 50%, #dc3545 50%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
 }
 .header {
   color: white;
@@ -10,9 +13,20 @@ body {
 .wrapper {
   margin: 0 auto;
   background: white;
+  border-radius: 15px 15px 0 0;
   /* padding-top: 1rem; */
   /* padding-bottom: 1rem; */
-  box-shadow: 0 0 15px 0 rgba(225, 225, 225, 1);
+
+  box-shadow: 0px 0px 0.5rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 80vh;
 }
 
 .form-group > label::after {
@@ -40,12 +54,13 @@ body {
     position: relative;
     min-width: 500px;
     max-width: 500px;
-    height: 98vh;
+    height: 85vh;
+
     /* overflow-y: hidden; */
   }
   .wrapper .container {
     height: 80%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
   .header {
     position: sticky;
@@ -53,8 +68,29 @@ body {
     left: 0;
     width: 100%;
   }
+  .footer {
+    border-radius: 0 0 15px 15px;
+  }
+  .header {
+    border-radius: 15px 15px 0 0;
+  }
+  .wrapper .container {
+    min-height: unset;
+  }
 }
 
 .form-check-group-label {
   width: 200px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-top: 2px;
+}
+
+.error::after {
+  content: " ";
+  color: white;
 }
