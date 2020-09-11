@@ -7,43 +7,54 @@
   <title>Confirm Details</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://htmecs.netlify.app/style.css">
+
   <link rel="icon" href="img/black(5).png">
 
 </head>
 
-<body>
+<body class="d-flex flex-column justify-content-between align-items-center">
   <div class="wrapper">
-    <%- include('header'); -%>
-    <h6 class="text-dark text-center mt-2">Verify your Details</h6>
-    <div class="container p-3">
-      <form action="/dRequest" method="POST">
-        <table class="table table-bordered">
-          <tr>
-            <th>HallTicket</th>
-            <td> <%= htno %> </td>
-          </tr>
 
-          <tr>
-            <th>Name</th>
-            <td> <%= name %> </td>
-          </tr>
-          <tr>
-            <th>Examination Date</th>
-            <td> <%= date %> </td>
-          </tr>
-        </table>
 
-        <div class=" text-center w-100">
-          <input type="submit" value="Generate Declaration Form" class="btn btn-danger">
-          <a href="/editDetails" class="ml-3 mt-3 mt-md-0 px-5 btn btn-danger">Edit</a>
+    <div class="container py-3">
+
+      <div class="card mx-auto">
+        <div class="card-header bg-danger text-white text-center">
+          <h6 class="card-title mb-0">
+            Sri Venkateswara Arts College
+          </h6>
+          <span>Tirupati</span>
         </div>
+        <div class="card-body">
+          <form action="/dRequest" method="POST">
+            <table class="table table-bordered">
+              <tr>
+                <th>HallTicket</th>
+                <td> <%= htno %> </td>
+              </tr>
 
-      </form>
+              <tr>
+                <th>Name</th>
+                <td> <%= name %> </td>
+              </tr>
+              <tr>
+                <th>Examination Date</th>
+                <td> <%= date %> </td>
+              </tr>
+            </table>
+
+            <div class=" text-center w-100">
+              <input type="submit" value="Generate Declaration Form" class="btn btn-danger mb-md-1 md-lg-0">
+              <a href="/editDetails" class="ml-3 mt-3 mt-md-0 px-5 btn btn-danger">Edit</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
-    <%- include('footer'); -%>
   </div>
-
+  <%- include('footer'); -%>
 
 
 </body>
