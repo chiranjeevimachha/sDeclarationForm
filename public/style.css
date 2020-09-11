@@ -1,0 +1,47 @@
+body {
+  background: rgba(225, 225, 225, 0.9);
+}
+.header {
+  color: white;
+  font-size: 80%;
+  padding: 0.5rem;
+  text-align: center;
+}
+.wrapper {
+  margin: 0 auto;
+  background: white;
+  /* padding-top: 1rem; */
+  /* padding-bottom: 1rem; */
+  box-shadow: 0 0 15px 0 rgba(225, 225, 225, 1);
+}
+
+.form-group > label::after {
+  content: "*";
+  color: red;
+}
+
+.footer {
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+}
+.footer h5 {
+  font-size: 80%;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper {
+    min-width: 500px;
+    max-width: 500px;
+  }
+}
+
+.form-check-group-label {
+  width: 200px;
+}

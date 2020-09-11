@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Declaration Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <%- include('header'); -%>
+
+    <div class="container py-3">
+      <span class=" text-danger"> * - marked are mandatory</span>
+      <form action="<%=method%>" method="POST">
+        <div class="form-group">
+          <label for="sname">
+            Candidate Name
+          </label>
+          <input type="text" name="sname" id="sname" class="form-control" required value="<%= name %> ">
+        </div>
+        <div class="form-group">
+          <label for="sgroup">
+            Group
+          </label>
+          <select name="sgroup" id="sgroup" class='custom-select' required>
+            <option value="<%=group %>"><%=group %></option>
+            <option value="B.Sc.(M.E.Cs)">B.Sc.(M.E.Cs)</option>
+            <option value="B.Sc.(M.P.Cs)">B.Sc.(M.P.Cs)</option>
+            <option value="B.Sc.(M.S.Cs)">B.Sc.(M.S.Cs)</option>
+            <option value="B.Sc.(M.P.E)">B.Sc.(M.P.E)</option>
+            <option value="B.Sc.(M.P.C) - TM">B.Sc.(M.P.C) - TM</option>
+            <option value="B.Sc.(M.P.C) - EM">B.Sc.(M.P.C) - EM</option>
+            <option value="B.Com. (CA)">B.Com. (CA)</option>
+            <option value="B.Com. (Gen.)-TM1">B.Com. (Gen.)-TM1</option>
+            <option value="B.Com. (Gen.)-TM2">B.Com. (Gen.)-TM2</option>
+            <option value="B.Com. (Gen.)-EM">B.Com. (Gen.)-EM</option>
+            <option value="B.A(A.S.CA)">B.A(A.S.CA)</option>
+            <option value="B.A(H.E&amp;Ad.Eng.)">B.A(H.E&amp;Ad.Eng.)</option>
+            <option value="B.A(H.E.Ic)">B.A(H.E.Ic)</option>
+            <option value="B.A(H.E.Psy)">B.A(H.E.Psy)</option>
+            <option value="B.A(H.P&amp;Ad.Tel.)">B.A(H.P&amp;Ad.Tel.)</option>
+            <option value="B.A(H.E.P)">B.A(H.E.P)</option>
+            <option value="B.Sc(C.P.Z)">B.Sc(C.P.Z)</option>
+            <option value="B.Sc(C.B.Z)-TM">B.Sc(C.B.Z)-TM</option>
+            <option value="B.Sc(C.B.Z)-EM">B.Sc(C.B.Z)-EM</option>
+            <option value="B.Sc(C.D.Z)">B.Sc(C.D.Z)</option>
+            <option value="B.Sc(M.D.C)">B.Sc(M.D.C)</option>
+            <option value="B.Sc(B.B.C)">B.Sc(B.B.C)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="shtno">
+            Hall Ticket
+          </label>
+          <input type="text" name="shtno" id="shtno" class="form-control" required maxlength="10" minlength="10"
+            value="<%= htno %>">
+        </div>
+        <div class="form-group">
+          <label for="srollno">
+            Roll No
+          </label>
+          <input type="text" name="srollno" id="srollno" class="form-control" required maxlength="6" minlength="6"
+            value="<%= rollno %>">
+        </div>
+        <div class="form-group">
+          <label for="stel">
+            Mobile
+          </label>
+          <input type="tel" name="stel" id="stel" class="form-control" required max="10" minlength="10"
+            value="<%= mobile %>">
+        </div>
+        <div class="symptopms">
+          <p>
+            You are requested to declare if you have any of the followng listed symptoms by selecting " Yes " (Yes, I
+            have) or " No " (No, I dont not have).
+          </p>
+
+          <div class="form-group">
+            <label class="form-check-group-label">Cough</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease1" id="disease1" class="form-check-input" value="Yes">
+              <label for="disease1" class="form-check-label">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease1" id="disease1" class="form-check-input" value="No">
+              <label for="disease1" class="form-check-label">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check-group-label">Fever</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease2" id="disease2" class="form-check-input" value="Yes">
+              <label for="disease2" class="form-check-label">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease2" id="disease2" class="form-check-input" value="No">
+              <label for="disease2" class="form-check-label">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check-group-label">Cold/Runny Nose</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease3" id="disease3" class="form-check-input" value="Yes">
+              <label for="disease3" class="form-check-label">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease3" id="disease3" class="form-check-input" value="No">
+              <label for="disease3" class="form-check-label">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check-group-label">Breathing Problem</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease4" id="disease4" class="form-check-input" value="Yes">
+              <label for="disease4" class="form-check-label">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="disease4" id="disease4" class="form-check-input" value="No">
+              <label for="disease4" class="form-check-label">No</label>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="<%=submitText%>" class="btn btn-block btn-danger">
+        </div>
+
+      </form>
+    </div>
+    <%- include('footer'); -%>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

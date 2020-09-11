@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('header'); -%>
+    <h6 class="text-dark text-center mt-2">Verify your Details</h6>
+    <div class="container p-3">
+      <form action="/dRequest" method="POST">
+        <table class="table table-bordered">
+          <tr>
+            <th>HallTicket</th>
+            <td> <%= htno %> </td>
+          </tr>
+          <tr>
+            <th>Roll No</th>
+            <td> <%= rollno %> </td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td> <%= name %> </td>
+          </tr>
+          <tr>
+            <th>Group</th>
+            <td> <%= group %> </td>
+          </tr>
+          <tr>
+            <th>Moblie</th>
+            <td> <%= mobile %> </td>
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <th colspan="2" class="text-center">Symptoms</th>
+          </tr>
+          <tr>
+            <th>Cough</th>
+            <td class="text-center"> <%= d1 %> </td>
+          </tr>
+          <tr>
+            <th>Fever</th>
+            <td class="text-center"> <%= d2 %> </td>
+          </tr>
+          <tr>
+            <th>Cold/Runny Nose</th>
+            <td class="text-center"> <%= d3 %> </td>
+          </tr>
+          <tr>
+            <th>Breathing Problem</th>
+            <td class="text-center"> <%= d4 %> </td>
+          </tr>
+
+        </table>
+        <div class=" text-center w-100">
+          <input type="submit" value="Generate Declaration Form" class="btn btn-danger">
+          <a href="/editDetails" class="ml-3 mt-3 mt-md-0 px-5 btn btn-danger">Edit</a>
+        </div>
+
+      </form>
+    </div>
+    <%- include('footer'); -%>
+  </div>
+
+
+
+</body>
+
+</html>
