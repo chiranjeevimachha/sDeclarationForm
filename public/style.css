@@ -29,7 +29,7 @@ body {
   font-size: 80%;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   body {
     min-height: 100vh;
     display: flex;
@@ -37,8 +37,21 @@ body {
     justify-content: center;
   }
   .wrapper {
+    position: relative;
     min-width: 500px;
     max-width: 500px;
+    height: 98vh;
+    /* overflow-y: hidden; */
+  }
+  .wrapper .container {
+    height: 80%;
+    overflow-y: scroll;
+  }
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }
 

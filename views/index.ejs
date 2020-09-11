@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/black(5).png">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <%- include('header'); -%>
 
     <div class="container py-3">
-      <span class=" text-danger"> * - marked are mandatory</span>
+      <span class="text-danger my-2 d-block font-weight-bold"> * - Marked are mandatory</span>
       <form action="<%=method%>" method="POST">
         <div class="form-group">
           <label for="sname">
@@ -28,7 +29,7 @@
           <label for="sgroup">
             Group
           </label>
-          <select name="sgroup" id="sgroup" class='custom-select' required>
+          <select name="sgroup" id="sgroup" class='custom-select'>
             <option value="<%=group %>"><%=group %></option>
             <option value="B.Sc.(M.E.Cs)">B.Sc.(M.E.Cs)</option>
             <option value="B.Sc.(M.P.Cs)">B.Sc.(M.P.Cs)</option>
@@ -72,8 +73,7 @@
           <label for="stel">
             Mobile
           </label>
-          <input type="tel" name="stel" id="stel" class="form-control" required max="10" minlength="10"
-            value="<%= mobile %>">
+          <input type="tel" name="stel" id="stel" class="form-control" value="<%= mobile %>">
         </div>
         <div class="symptopms">
           <p>
@@ -145,13 +145,23 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+    integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"
+    integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA=="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="js/validate.js"></script>
+  <script>
 
+
+  </script>
 </body>
 
 </html>
