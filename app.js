@@ -107,7 +107,7 @@ app.post("/dRequest", function (req, res) {
       //   width: "80%",
       // },
       {
-        text: "Student Self-Declaration Form Regarging COVID-19",
+        text: "Student Self-Declaration Form Regarding COVID-19",
         fontSize: 16,
         alignment: "center",
         bold: true,
