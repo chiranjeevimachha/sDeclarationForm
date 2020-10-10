@@ -2,23 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 var path = require("path");
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
+
 var fonts = {
   Roboto: {
-    normal: path.join(
-      __dirname,
-
-      "/example",
-      "/Roboto/Roboto-Regular.ttf"
-    ),
-    bold: path.join(
-      __dirname,
-
-      "/example",
-      "/Roboto/Roboto-Medium.ttf"
-    ),
+    normal: path.join(__dirname, "/example", "/Roboto/Roboto-Regular.ttf"),
+    bold: path.join(__dirname, "/example", "/Roboto/Roboto-Medium.ttf"),
     italics: path.join(
       __dirname,
 
@@ -51,12 +43,6 @@ app.post("/", function (req, res) {
   student_name = req.body.sname;
   student_htno = req.body.shtno;
   f_date = req.body.s_date;
-
-  // for (var i = 0; i < f_date.length; i++) {
-  //   var date = f_date;
-  //   f_date[f_date.length - 1] = date.split("-");
-  // }
-
   res.render("conformDetails.ejs", {
     name: student_name,
     htno: student_htno,
